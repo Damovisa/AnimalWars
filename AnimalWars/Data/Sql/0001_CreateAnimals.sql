@@ -2,6 +2,7 @@
 	[Id] [varchar](50) NOT NULL,
 	[Name] [varchar](100) NOT NULL,
 	[Category] [varchar](20) NOT NULL,
+	[Image] [varchar](max) NULL,
 	[Count] [int] NOT NULL
 ) ON [PRIMARY]
 
