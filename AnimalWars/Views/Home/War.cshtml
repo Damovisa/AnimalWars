@@ -1,0 +1,21 @@
+﻿@model AnimalWars.Models.AnimalWar
+
+@{
+    ViewBag.Title = "Animal Wars - " + Model.Category;
+}
+
+@using (Html.BeginForm("War", "Home"))
+{
+    <input type="hidden" id="category" name="category" value="@Model.Category.ToString()"/>
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-5 text-center">
+            @Model.AnimalOne.Name<br/>
+            <button id="animal1" value="@Model.AnimalOne.Id" name="animal1" type="submit" class="btn btn-primary btn-lg">@Model.AnimalOne.Name</button>
+        </div>
+        <div class="col-md-2 text-danger text-center" style="font-size:x-large">vs</div>
+        <div class="col-md-5 text-center">
+            @Model.AnimalTwo.Name<br/>
+            <button id="animal2" value="@Model.AnimalTwo.Id" name="animal2" type="submit" class="btn btn-primary btn-lg">@Model.AnimalTwo.Name</button>
+        </div>
+    </div>
+}

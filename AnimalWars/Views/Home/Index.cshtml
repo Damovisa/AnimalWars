@@ -1,0 +1,18 @@
+﻿@model AnimalWars.Models.AnimalWar
+
+@{
+    ViewBag.Title = "Animal Wars";
+}
+
+<div class="row" style="margin-top: 10px">
+    <div class="col-md-4 text-center">
+        @Html.ActionLink("Land Animals", "Land", null, new {@class = "btn btn-lg btn-primary"})
+    </div>
+    <div class="col-md-4 text-center">
+        @Html.ActionLink("Sea Animals", "Sea", null, new { @class = "btn btn-lg btn-primary" })
+    </div>
+    <div class="col-md-4 text-center">
+        @Html.ActionLink("Flying Animals", "Flying", null, new { @class = "btn btn-lg btn-primary" })
+    </div>
+
+</div>
