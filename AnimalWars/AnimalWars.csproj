@@ -25,7 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <ApplicationInsightsResourceId>/subscriptions/7b4fe2d5-b289-407b-a297-5881ad565165/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/AnimalWars</ApplicationInsightsResourceId>
+    <ApplicationInsightsResourceId>/subscriptions/5c28a651-eb43-4c7a-8dc2-9393a94371d8/resourcegroups/Default-Web-AustraliaEast/providers/microsoft.insights/components/AnimalWars</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -160,6 +160,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Data\Sql\0002_InsertAnimals.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
