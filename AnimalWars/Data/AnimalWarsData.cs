@@ -25,37 +25,20 @@ namespace AnimalWars.Data
 
         public AnimalWar GetSingleWar(Category animalCategory)
         {
-            try
+            var query =
+                "SELECT TOP 2 Id, Name, Category, Count FROM Animals WHERE Category = @category ORDER BY newid()";
+            var animals = _cnn.Query<Animal>(query, new { category = animalCategory.ToString() }).ToList();
+            return new AnimalWar
             {
-                var query =
-                    "SELECT TOP 2 Id, Name, Category, Count FROM Animals WHERE Category = @category ORDER BY newid()";
-                var animals = _cnn.Query<Animal>(query, new { category = animalCategory.ToString() }).ToList();
-                return new AnimalWar
-                {
-                    AnimalOne = animals.First(),
-                    AnimalTwo = animals.ElementAt(1)
-                };
-            }
-            catch (Exception ex)
-            {
-                _telemetryClient.TrackException(ex);
-                throw;
-            }
+                AnimalOne = animals.First(),
+                AnimalTwo = animals.ElementAt(1)
+            };
         }
 
         public void IncrementCount(string id)
         {
-            try
-            {
-                var query = "UPDATE Animals SET Count = Count + 1 WHERE Id = @id";
-                _cnn.Execute(query, new { id });
-            }
-            catch (Exception ex)
-            {
-                _telemetryClient.TrackException(ex);
-                throw;
-            }
-
+            var query = "UPDATE Animals SET Count = Count + 1 WHERE Id = @id";
+            _cnn.Execute(query, new { id });
         }
     }
 }
