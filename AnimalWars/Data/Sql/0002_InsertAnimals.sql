@@ -66,3 +66,5 @@ INSERT [dbo].[Animals] ([Id], [Name], [Category], [Image], [Count]) VALUES (N'cr
 GO
 INSERT [dbo].[Animals] ([Id], [Name], [Category], [Image], [Count]) VALUES (N'magpie', N'Magpie', N'Flying', NULL, 0)
 GO
+INSERT [dbo].[Animals] ([Id], [Name], [Category], [Image], [Count]) VALUES (N'ghost', N'Ghost', N'Imaginary', NULL, 0)
+GO

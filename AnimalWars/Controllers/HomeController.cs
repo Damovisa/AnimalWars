@@ -37,6 +37,12 @@ namespace AnimalWars.Controllers
             return View("War", war);
         }
 
+        public ActionResult Imaginary()
+        {
+            var war = _animalWarsData.GetSingleWar(Category.Imaginary);
+            return View("War", war);
+        }
+
         [HttpPost]
         public ActionResult War(string animal1, string animal2, string category)
         {

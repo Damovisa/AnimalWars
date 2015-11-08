@@ -20,6 +20,7 @@
     {
         Land,
         Sea,
-        Flying
+        Flying,
+        Imaginary
     }
 }

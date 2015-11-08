@@ -14,12 +14,10 @@ namespace AnimalWars.Data
     public class AnimalWarsData
     {
         private SqlConnection _cnn;
-        private TelemetryClient _telemetryClient;
 
         public AnimalWarsData()
         {
             _cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["AnimalWarsConnection"].ConnectionString);
-            _telemetryClient = new TelemetryClient();
         }
 
 
@@ -30,6 +28,7 @@ namespace AnimalWars.Data
             var animals = _cnn.Query<Animal>(query, new { category = animalCategory.ToString() }).ToList();
             return new AnimalWar
             {
+                //Category = animals.First().Category,
                 AnimalOne = animals.First(),
                 AnimalTwo = animals.ElementAt(1)
             };
