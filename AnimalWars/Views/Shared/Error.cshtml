@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var errorId = HttpContext.Current.Items["UniqueErrorId"];
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -8,9 +11,9 @@
     <hgroup>
         <h1>Error.</h1>
         <h2>An error occurred while processing your request.</h2>
-        @if (ViewData.ContainsKey("ErrorGnuid"))
-            {
-            <h2>If you're contacting support, quote this reference: @ViewBag.ErrorGnuid</h2>
+        @if (errorId != null)
+        {
+            <h2>If you're contacting support, quote this reference: @errorId</h2>
         }
     </hgroup>
 </body>
