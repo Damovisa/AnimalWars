@@ -24,7 +24,7 @@ namespace AnimalWars.Data
         public AnimalWar GetSingleWar(Category animalCategory)
         {
             var query =
-                "SELECT TOP 2 Id, Name, Category, Count FROM Animals WHERE Category = @category ORDER BY newid()";
+                "SELECT TOP 2 Id, Name, Category, Image, Count FROM Animals WHERE Category = @category ORDER BY newid()";
             var animals = _cnn.Query<Animal>(query, new { category = animalCategory.ToString() }).ToList();
             return new AnimalWar
             {
