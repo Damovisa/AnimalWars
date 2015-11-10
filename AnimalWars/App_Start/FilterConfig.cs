@@ -28,7 +28,6 @@ namespace AnimalWars
         public void OnException(ExceptionContext filterContext)
         {
             var gnuid = Guid.NewGuid().ToString("N").Substring(26, 6);
-            //filterContext.Controller.ViewBag.ErrorGnuid = gnuid;
             filterContext.HttpContext.Items["UniqueErrorId"] = gnuid;
             var properties = new Dictionary<string, string> {{"UniqueErrorId", gnuid}};
             _telemetryClient.TrackException(filterContext.Exception, properties);

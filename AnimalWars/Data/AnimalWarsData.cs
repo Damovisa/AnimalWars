@@ -38,6 +38,12 @@ namespace AnimalWars.Data
         {
             var query = "UPDATE Animals SET Count = Count + 1 WHERE Id = @id";
             _cnn.Execute(query, new { id });
+
+            if (id == "lion")
+            {
+                var properties = new Dictionary<string, string> { { "Selection", "lion"} };
+                new TelemetryClient().TrackEvent("Specific Selection", properties );
+            }
         }
     }
 }
