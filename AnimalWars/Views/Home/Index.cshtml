@@ -14,8 +14,11 @@
     <div class="col-md-3 col-sm-6 text-center">
         @Html.ActionLink("Flying Animals", "Flying", null, new {@class = "btn btn-lg btn-primary"})
     </div>
-    @*<div class="col-md-3 col-sm-6 text-center">
-        @Html.ActionLink("Imaginary Animals", "Imaginary", null, new { @class = "btn btn-lg btn-primary" })
-    </div>*@
+    @if (FeatureToggle.ShowPreviewFeatures)
+    {
+        <div class="col-md-3 col-sm-6 text-center">
+            @Html.ActionLink("Imaginary Animals", "Imaginary", null, new {@class = "btn btn-lg btn-primary"})
+        </div>
+    }
 
 </div>
