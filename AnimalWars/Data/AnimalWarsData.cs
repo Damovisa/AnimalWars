@@ -41,8 +41,8 @@ namespace AnimalWars.Data
 
             if (id == "lion")
             {
-                var properties = new Dictionary<string, string> { { "Selection", "lion"} };
-                new TelemetryClient().TrackEvent("Specific Selection", properties );
+                var metrics = new Dictionary<string, double> { { "Count", 1} };
+                new TelemetryClient().TrackEvent("Lion Selected", null, metrics);
             }
         }
     }
